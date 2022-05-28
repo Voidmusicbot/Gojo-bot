@@ -27,7 +27,7 @@ def anime_quote():
     anime = dic["anime"]
     return quote, character, anime
 
-@run_async
+
 def quotes(update: Update, context: CallbackContext):
     message = update.effective_message
     quote, character, anime = anime_quote()
@@ -55,7 +55,7 @@ def change_quote(update: Update, context: CallbackContext):
     message.edit_text(msg, reply_markup=keyboard,
                       parse_mode=ParseMode.HTML)
  
-@run_async   
+   
 def animequotes(update: Update, context: CallbackContext):
     message = update.effective_message
     name = message.reply_to_message.from_user.first_name if message.reply_to_message else message.from_user.first_name
@@ -143,13 +143,13 @@ ANIMEQUOTES_HANDLER = DisableAbleCommandHandler("animequotes", animequotes)
 QUOTES_HANDLER = DisableAbleCommandHandler("quote", quotes)
 
 CHANGE_QUOTE = CallbackQueryHandler(
-    change_quote, pattern=r"change_.*")
+    change_quote, pattern=r"change_.*", run_async = True)
 QUOTE_CHANGE = CallbackQueryHandler(
-    change_quote, pattern=r"quote_.*")
+    change_quote, pattern=r"quote_.*", run_async = True)
 CHANGEK_QUOTE = CallbackQueryHandler(
-    changek_quote, pattern=r"changek_.*")
+    changek_quote, pattern=r"changek_.*", run_async = True)
 QUOTEK_CHANGE = CallbackQueryHandler(
-    changek_quote, pattern=r"quotek_.*")
+    changek_quote, pattern=r"quotek_.*", run_async = True)
 
 dispatcher.add_handler(CHANGE_QUOTE)
 dispatcher.add_handler(QUOTE_CHANGE)

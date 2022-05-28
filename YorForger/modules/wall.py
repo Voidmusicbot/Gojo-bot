@@ -88,7 +88,7 @@ async def walld(strin):
         return tit_links
 
 
-@run_async
+
 def wall(update, context):
     chat_id = update.effective_chat.id
     msg = update.effective_message
@@ -127,7 +127,7 @@ def wall(update, context):
                     timeout=60,
                 )
 
-WALL_HANDLER = DisableAbleCommandHandler("wall", wall)
+WALL_HANDLER = DisableAbleCommandHandler("wall", wall, run_async =True)
 dispatcher.add_handler(WALL_HANDLER)
 
 api_key = ('RIZMUN-PTUQTE-ZDXUWJ-AGZJVR-ARQ') # get it from @arqrobot

@@ -6,7 +6,7 @@ from YorForger import dispatcher
 from YorForger.modules.disable import DisableAbleCommandHandler
 
 
-@run_async
+
 def covid(update: Update, context: CallbackContext):
     message = update.effective_message
     text = message.text.split(" ", 1)
@@ -20,7 +20,7 @@ def covid(update: Update, context: CallbackContext):
     message.reply_text(reply_text, parse_mode=ParseMode.MARKDOWN)
 
 
-COVID_HANDLER = DisableAbleCommandHandler(["covid", "corona"], covid)
+COVID_HANDLER = DisableAbleCommandHandler(["covid", "corona"], covid, run_async =True)
 dispatcher.add_handler(COVID_HANDLER)
 
 __mod_name__ = "COVID 19"

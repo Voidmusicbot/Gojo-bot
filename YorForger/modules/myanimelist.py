@@ -17,7 +17,7 @@ from YorForger import dispatcher
 jikan = Jikan()
 
 
-@run_async
+
 def anime(update: Update, context: CallbackContext):
     msg = update.effective_message
     args = context.args
@@ -91,7 +91,7 @@ def anime(update: Update, context: CallbackContext):
     )
 
 
-@run_async
+
 def character(update: Update, context: CallbackContext):
     msg = update.effective_message
     res = ""
@@ -126,7 +126,7 @@ def character(update: Update, context: CallbackContext):
         )
 
 
-@run_async
+
 def upcoming(update: Update, context: CallbackContext):
     msg = update.effective_message
     rep = "<b>Upcoming anime</b>\n"
@@ -141,7 +141,7 @@ def upcoming(update: Update, context: CallbackContext):
     msg.reply_text(rep, parse_mode=ParseMode.HTML)
 
 
-@run_async
+
 def manga(update: Update, context: CallbackContext):
     msg = update.effective_message
     args = context.args
@@ -202,10 +202,10 @@ Get information about anime, manga or characters with the help of this module! A
 __mod_name__ = "MyAnimeList"
 
 
-ANIME_HANDLER = CommandHandler("myanime", anime, pass_args=True)
-CHARACTER_HANDLER = CommandHandler("mycharacter", character, pass_args=True)
-UPCOMING_HANDLER = CommandHandler("myupcoming", upcoming)
-MANGA_HANDLER = CommandHandler("mymanga", manga, pass_args=True)
+ANIME_HANDLER = CommandHandler("myanime", anime, pass_args=True, run_async =True)
+CHARACTER_HANDLER = CommandHandler("mycharacter", character, pass_args=True, run_async =True)
+UPCOMING_HANDLER = CommandHandler("myupcoming", upcoming, run_async =True)
+MANGA_HANDLER = CommandHandler("mymanga", manga, pass_args=True, run_async =True)
 
 dispatcher.add_handler(ANIME_HANDLER)
 dispatcher.add_handler(CHARACTER_HANDLER)

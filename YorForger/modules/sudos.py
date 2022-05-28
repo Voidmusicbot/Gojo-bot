@@ -43,7 +43,7 @@ def check_user_id(user_id: int, context: CallbackContext) -> Optional[str]:
 
 #FtSasaki adding add to pro developer cmd :D
 
-@run_async
+
 @dev_plus
 @loggable
 def addpiro(update: Update, context: CallbackContext) -> str:
@@ -98,7 +98,7 @@ def addpiro(update: Update, context: CallbackContext) -> str:
     return log_message
 
 
-@run_async
+
 @dev_plus
 @loggable
 def addsudo(update: Update, context: CallbackContext) -> str:
@@ -150,7 +150,7 @@ def addsudo(update: Update, context: CallbackContext) -> str:
     return log_message
 
 
-@run_async
+
 @sudo_plus
 @loggable
 def addsupport(
@@ -206,7 +206,7 @@ def addsupport(
 
 
 #FtSasaki adding rmpiro to remove user from {devs}
-@run_async
+
 @dev_plus
 @loggable
 def rmpiro(update: Update, context: CallbackContext) -> str:
@@ -250,7 +250,7 @@ def rmpiro(update: Update, context: CallbackContext) -> str:
         return ""
       
       
-@run_async
+
 @dev_plus
 @loggable
 def removesudo(update: Update, context: CallbackContext) -> str:
@@ -294,7 +294,7 @@ def removesudo(update: Update, context: CallbackContext) -> str:
         return ""
 
 
-@run_async
+
 @sudo_plus
 @loggable
 def removesupport(update: Update, context: CallbackContext) -> str:
@@ -339,14 +339,14 @@ def removesupport(update: Update, context: CallbackContext) -> str:
 
 
 
-DEV_HANDLER = CommandHandler(("addspy", "adddev"), addpiro)
-SUDO_HANDLER = CommandHandler(("addagent", "adddrag"), addsudo)
-SUPPORT_HANDLER = CommandHandler(("addfamilymember", "addsupport"), addsupport)
+DEV_HANDLER = CommandHandler(("addspy", "adddev"), addpiro, run_async =True)
+SUDO_HANDLER = CommandHandler(("addagent", "adddrag"), addsudo, run_async =True)
+SUPPORT_HANDLER = CommandHandler(("addfamilymember", "addsupport"), addsupport, run_async =True)
 
-RMPIRO_HANDLER = CommandHandler(("rmspy", "rmdev"), rmpiro)
-UNSUDO_HANDLER = CommandHandler(("rmagent", "rmsudo"), removesudo)
+RMPIRO_HANDLER = CommandHandler(("rmspy", "rmdev"), rmpiro, run_async =True)
+UNSUDO_HANDLER = CommandHandler(("rmagent", "rmsudo"), removesudo, run_async =True)
 UNSUPPORT_HANDLER = CommandHandler(("rmfamilymember", "removesupp"),
-                                   removesupport)
+                                   removesupport, run_async =True)
 
 dispatcher.add_handler(DEV_HANDLER)
 dispatcher.add_handler(SUDO_HANDLER)

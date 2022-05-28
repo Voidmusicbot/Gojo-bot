@@ -8,7 +8,7 @@ from YorForger.modules.helper_funcs.alternate import send_message
 from YorForger.modules.helper_funcs.chat_status import user_admin
 
 
-@run_async
+
 @user_admin
 def phone(update, context):
 
@@ -45,7 +45,7 @@ def phone(update, context):
     send_message(update.effective_message, g)
 
 
-PHONE_HANDLER = CommandHandler("phone", phone)
+PHONE_HANDLER = CommandHandler("phone", phone, run_async =True)
 
 dispatcher.add_handler(PHONE_HANDLER)
 

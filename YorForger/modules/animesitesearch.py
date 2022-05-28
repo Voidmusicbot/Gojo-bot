@@ -95,15 +95,15 @@ def site_search(update: Update, context: CallbackContext, site: str):
             result, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
 
 
-@run_async
+
 def kayo(update: Update, context: CallbackContext):
     site_search(update, context, "kayo")
     
-@run_async
+
 def animespot(update: Update, context: CallbackContext):
     site_search(update, context, "animespot")
    
-@run_async
+
 def animetm(update: Update, context: CallbackContext):
     site_search(update, context, "animetm")
 
@@ -115,9 +115,9 @@ __help__ = """
 """
     
 __mod_name__ = "Anime Site Search"
-KAYO_SEARCH_HANDLER = DisableAbleCommandHandler("kayo", kayo)
-ANIMESPOT_SEARCH_HANDLER = DisableAbleCommandHandler("animespot", animespot)
-ANIMETM_SEARCH_HANDLER = DisableAbleCommandHandler("animetm", animetm)
+KAYO_SEARCH_HANDLER = DisableAbleCommandHandler("kayo", kayo, run_async = True)
+ANIMESPOT_SEARCH_HANDLER = DisableAbleCommandHandler("animespot", animespot, run_async = True)
+ANIMETM_SEARCH_HANDLER = DisableAbleCommandHandler("animetm", animetm, run_async = True)
 
 dispatcher.add_handler(KAYO_SEARCH_HANDLER)
 dispatcher.add_handler(ANIMESPOT_SEARCH_HANDLER)
