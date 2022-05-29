@@ -11,6 +11,7 @@ from pyrogram import Client, errors
 from redis import StrictRedis
 from telethon import TelegramClient
 from telethon.sessions import MemorySession
+from YorForger import config
 
 StartTime = time.time()
 
@@ -123,79 +124,79 @@ if ENV:
     SPAMMERS = os.environ.get("SPAMMERS", None)
 
 else:
-    from Yor.config import Development as Config
+    from YorForger.config import Development as config
 
-    TOKEN = Config.TOKEN
+    TOKEN = config.TOKEN
     try:
-        OWNER_ID = int(Config.OWNER_ID)
+        OWNER_ID = int(config.OWNER_ID)
     except ValueError:
         raise Exception("[Yor] Your OWNER_ID variable is not a valid integer.")
 
-    MESSAGE_DUMP = Config.MESSAGE_DUMP
-    OWNER_USERNAME = Config.OWNER_USERNAME
+    MESSAGE_DUMP = config.MESSAGE_DUMP
+    OWNER_USERNAME = config.OWNER_USERNAME
 
     try:
-        DEV_USERS = {int(x) for x in Config.DEV_USERS or []}
+        DEV_USERS = {int(x) for x in config.DEV_USERS or []}
     except ValueError:
         raise Exception(
             "[Yor] Your dev users list does not contain valid integers."
         )
 
     try:
-        SUPPORT_USERS = {int(x) for x in Config.SUPPORT_USERS or []}
+        SUPPORT_USERS = {int(x) for x in config.SUPPORT_USERS or []}
     except ValueError:
         raise Exception(
             "[Yor] Your support users list does not contain valid integers."
         )
 
     try:
-        WHITELIST_USERS = {int(x) for x in Config.WHITELIST_USERS or []}
+        WHITELIST_USERS = {int(x) for x in config.WHITELIST_USERS or []}
     except ValueError:
         raise Exception(
             "[Yor] Your whitelisted users list does not contain valid integers."
         )
     try:
-        DEMONS = {int(x) for x in Config.DEMONS or []}
+        DEMONS = {int(x) for x in config.DEMONS or []}
     except ValueError:
         raise Exception(
             "[Yor] Your demons list does not contain valid integers."
         )
     try:
-        WHITELIST_CHATS = {int(x) for x in Config.WHITELIST_CHATS or []}
+        WHITELIST_CHATS = {int(x) for x in config.WHITELIST_CHATS or []}
     except ValueError:
         raise Exception(
             "[Yor] Your whitelisted chats list does not contain valid integers."
         )
     try:
-        BLACKLIST_CHATS = {int(x) for x in Config.BLACKLIST_CHATS or []}
+        BLACKLIST_CHATS = {int(x) for x in config.BLACKLIST_CHATS or []}
     except ValueError:
         raise Exception(
             "[Yor] Your blacklisted users list does not contain valid integers."
         )
 
-    WEBHOOK = Config.WEBHOOK
-    URL = Config.URL
-    PORT = Config.PORT
-    CERT_PATH = Config.CERT_PATH
+    WEBHOOK = config.WEBHOOK
+    URL = config.URL
+    PORT = config.PORT
+    CERT_PATH = config.CERT_PATH
 
-    DB_URI = Config.SQLALCHEMY_DATABASE_URI
-    REDIS_URL = Config.REDIS_URL
-    DONATION_LINK = Config.DONATION_LINK
-    LOAD = Config.LOAD
-    NO_LOAD = Config.NO_LOAD
-    DEL_CMDS = Config.DEL_CMDS
-    STRICT_GBAN = Config.STRICT_GBAN
-    WORKERS = Config.WORKERS
-    BAN_STICKER = Config.BAN_STICKER
-    ALLOW_EXCL = Config.ALLOW_EXCL
-    CUSTOM_CMD = Config.CUSTOM_CMD
-    API_WEATHER = Config.API_OPENWEATHER
-    WALL_API = Config.WALL_API
-    SUPPORT_CHAT = Config.SUPPORT_CHAT
-    API_HASH = Config.API_HASH
-    API_ID = Config.API_ID
-    SPAMWATCH = Config.SPAMWATCH_API
-    SPAMMERS = Config.SPAMMERS
+    DB_URI = config.SQLALCHEMY_DATABASE_URI
+    REDIS_URL = config.REDIS_URL
+    DONATION_LINK = config.DONATION_LINK
+    LOAD = config.LOAD
+    NO_LOAD = config.NO_LOAD
+    DEL_CMDS = config.DEL_CMDS
+    STRICT_GBAN = config.STRICT_GBAN
+    WORKERS = config.WORKERS
+    BAN_STICKER = config.BAN_STICKER
+    ALLOW_EXCL = config.ALLOW_EXCL
+    CUSTOM_CMD = config.CUSTOM_CMD
+    API_WEATHER = config.API_OPENWEATHER
+    WALL_API = config.WALL_API
+    SUPPORT_CHAT = config.SUPPORT_CHAT
+    API_HASH = config.API_HASH
+    API_ID = config.API_ID
+    SPAMWATCH = config.SPAMWATCH_API
+    SPAMMERS = config.SPAMMERS
 
 # Dont Remove This!!!
 DEV_USERS.add(OWNER_ID)
