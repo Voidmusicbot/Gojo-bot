@@ -535,6 +535,13 @@ def paste(update, context):
         msg.reply_text("Give me a text file to paste on hastebin")
         return
 
+def delete_btn(update, context):
+    query = update.callback_query
+    if query.data == "delete":
+        query.message.delete()
+    elif query.data == "delete_":
+         query.message.delete()
+
 
 # /ip is for private use
 __help__ = """
@@ -590,6 +597,9 @@ SRC_HANDLER = CommandHandler(
     ["source", "repo"], src, filters=Filters.chat_type.groups, run_async=True
 )
 PASTE_HANDLER = DisableAbleCommandHandler("paste", paste, run_async=True)
+DELETE_HANDLER = CallbackQueryHandler(
+        delete_btn, pattern=r"delete_", run_async=True)
+
 
 dispatcher.add_handler(UD_HANDLER)
 dispatcher.add_handler(ID_HANDLER)
@@ -607,3 +617,4 @@ dispatcher.add_handler(SUPPLIST_HANDLER)
 dispatcher.add_handler(REDDIT_MEMES_HANDLER)
 dispatcher.add_handler(SRC_HANDLER)
 dispatcher.add_handler(PASTE_HANDLER)
+dispatcher.add_handler(DELETE_HANDLER)
