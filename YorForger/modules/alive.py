@@ -11,11 +11,11 @@ PHOTO = "https://te.legra.ph/file/d278826d0f59ed9c00341.mp4"
 
 
 def alive(update: Update, context: CallbackContext):
-    TEXT = "Hi {}, I Am Yor Forger!\n\n◈I'm working properly! \n\n◈My Darling - **[AUGSTUN 🝪 𝕮UᏒᏕɆĐ](https://t.me/Aug0felix)**\n\n◈Thanks For Using Me Here◈"
+    TEXT = "Hi **{}**, I Am **Yor Forger**!\n\n◈I'm working properly! \n\n◈My Darling - **[AUGSTUN 🝪 𝕮UᏒᏕɆĐ](https://t.me/Aug0felix)**\n\n◈Thanks For Using Me Here◈"
 
     first_name = update.effective_user.first_name
 
-    update.effective_message.reply_photo(
+    update.effective_message.reply_animation(
         PHOTO,
         TEXT.format(escape_markdown(first_name)), 
         parse_mode=ParseMode.MARKDOWN,
