@@ -29,7 +29,7 @@ async def variable(var):
     else:
         return await var.reply("`[HEROKU]:" "\nPlease setup your` **HEROKU_APP_NAME**")
     exe = var.pattern_match.group(1)
-    heroku_var = app.config()
+    heroku_var = app.config1()
     if exe == "see":
         k = await var.reply("`Getting information...`")
         await asyncio.sleep(1.5)

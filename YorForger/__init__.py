@@ -11,7 +11,7 @@ from pyrogram import Client, errors
 from redis import StrictRedis
 from telethon import TelegramClient
 from telethon.sessions import MemorySession
-from YorForger import config
+from YorForger import config1
 
 StartTime = time.time()
 
@@ -124,79 +124,79 @@ if ENV:
     SPAMMERS = os.environ.get("SPAMMERS", None)
 
 else:
-    from YorForger.config import Development as config
+    from YorForger.config1 import Development as config1
 
-    TOKEN = config.TOKEN
+    TOKEN = config1.TOKEN
     try:
-        OWNER_ID = int(config.OWNER_ID)
+        OWNER_ID = int(config1.OWNER_ID)
     except ValueError:
         raise Exception("[Yor] Your OWNER_ID variable is not a valid integer.")
 
-    MESSAGE_DUMP = config.MESSAGE_DUMP
-    OWNER_USERNAME = config.OWNER_USERNAME
+    MESSAGE_DUMP = config1.MESSAGE_DUMP
+    OWNER_USERNAME = config1.OWNER_USERNAME
 
     try:
-        DEV_USERS = {int(x) for x in config.DEV_USERS or []}
+        DEV_USERS = {int(x) for x in config1.DEV_USERS or []}
     except ValueError:
         raise Exception(
             "[Yor] Your dev users list does not contain valid integers."
         )
 
     try:
-        SUPPORT_USERS = {int(x) for x in config.SUPPORT_USERS or []}
+        SUPPORT_USERS = {int(x) for x in config1.SUPPORT_USERS or []}
     except ValueError:
         raise Exception(
             "[Yor] Your support users list does not contain valid integers."
         )
 
     try:
-        WHITELIST_USERS = {int(x) for x in config.WHITELIST_USERS or []}
+        WHITELIST_USERS = {int(x) for x in config1.WHITELIST_USERS or []}
     except ValueError:
         raise Exception(
             "[Yor] Your whitelisted users list does not contain valid integers."
         )
     try:
-        DEMONS = {int(x) for x in config.DEMONS or []}
+        DEMONS = {int(x) for x in config1.DEMONS or []}
     except ValueError:
         raise Exception(
             "[Yor] Your demons list does not contain valid integers."
         )
     try:
-        WHITELIST_CHATS = {int(x) for x in config.WHITELIST_CHATS or []}
+        WHITELIST_CHATS = {int(x) for x in config1.WHITELIST_CHATS or []}
     except ValueError:
         raise Exception(
             "[Yor] Your whitelisted chats list does not contain valid integers."
         )
     try:
-        BLACKLIST_CHATS = {int(x) for x in config.BLACKLIST_CHATS or []}
+        BLACKLIST_CHATS = {int(x) for x in config1.BLACKLIST_CHATS or []}
     except ValueError:
         raise Exception(
             "[Yor] Your blacklisted users list does not contain valid integers."
         )
 
-    WEBHOOK = config.WEBHOOK
-    URL = config.URL
-    PORT = config.PORT
-    CERT_PATH = config.CERT_PATH
+    WEBHOOK = config1.WEBHOOK
+    URL = config1.URL
+    PORT = config1.PORT
+    CERT_PATH = config1.CERT_PATH
 
-    DB_URI = config.SQLALCHEMY_DATABASE_URI
-    REDIS_URL = config.REDIS_URL
-    DONATION_LINK = config.DONATION_LINK
-    LOAD = config.LOAD
-    NO_LOAD = config.NO_LOAD
-    DEL_CMDS = config.DEL_CMDS
-    STRICT_GBAN = config.STRICT_GBAN
-    WORKERS = config.WORKERS
-    BAN_STICKER = config.BAN_STICKER
-    ALLOW_EXCL = config.ALLOW_EXCL
-    CUSTOM_CMD = config.CUSTOM_CMD
-    API_WEATHER = config.API_OPENWEATHER
-    WALL_API = config.WALL_API
-    SUPPORT_CHAT = config.SUPPORT_CHAT
-    API_HASH = config.API_HASH
-    API_ID = config.API_ID
-    SPAMWATCH = config.SPAMWATCH_API
-    SPAMMERS = config.SPAMMERS
+    DB_URI = config1.SQLALCHEMY_DATABASE_URI
+    REDIS_URL = config1.REDIS_URL
+    DONATION_LINK = config1.DONATION_LINK
+    LOAD = config1.LOAD
+    NO_LOAD = config1.NO_LOAD
+    DEL_CMDS = config1.DEL_CMDS
+    STRICT_GBAN = config1.STRICT_GBAN
+    WORKERS = config1.WORKERS
+    BAN_STICKER = config1.BAN_STICKER
+    ALLOW_EXCL = config1.ALLOW_EXCL
+    CUSTOM_CMD = config1.CUSTOM_CMD
+    API_WEATHER = config1.API_OPENWEATHER
+    WALL_API = config1.WALL_API
+    SUPPORT_CHAT = config1.SUPPORT_CHAT
+    API_HASH = config1.API_HASH
+    API_ID = config1.API_ID
+    SPAMWATCH = config1.SPAMWATCH_API
+    SPAMMERS = config1.SPAMMERS
 
 # Dont Remove This!!!
 DEV_USERS.add(OWNER_ID)

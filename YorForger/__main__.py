@@ -30,7 +30,7 @@ from YorForger import (
     )
 
 # needed to dynamically load modules
-# NOTE: Module order is not guaranteed, specify that in the config file!
+# NOTE: Module order is not guaranteed, specify that in the config1 file!
 from YorForger.events import register
 from YorForger.modules import ALL_MODULES
 from YorForger.modules.helper_funcs.chat_status import is_user_admin
