@@ -16,7 +16,7 @@ IMG_BYE = "https://te.legra.ph/file/35a2638006f4311aa282e.mp4"
 
 def goodnight(update: Update, context: CallbackContext):
 
-    update.effective_message.reply_photo(
+    update.effective_message.reply_animation(
             IMG_GN,
             parse_mode=ParseMode.MARKDOWN,
     )
@@ -25,7 +25,7 @@ def goodmorning(update, context):
     message = update.effective_message
     user1 = message.from_user.first_name
     try:
-        update.effective_message.reply_photo(
+        update.effective_message.reply_animation(
             IMG_GM,f"*Good Morning:* {user1}",
             parse_mode=ParseMode.MARKDOWN,
         )
@@ -34,7 +34,7 @@ def goodmorning(update, context):
         message.reply_text(reply)
 
 def hello(update: Update, context: CallbackContext):
-    update.effective_message.reply_photo(
+    update.effective_message.reply_animation(
             IMG_HELLO,
             parse_mode=ParseMode.MARKDOWN,
     )
