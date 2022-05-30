@@ -65,7 +65,7 @@ def warn(
             )
 
         else:  # ban
-            chat.kick_member(user.id)
+            chat.ban_member(user.id)
             reply = "That's{} warnings, {} has been banned!".format(
                 limit, mention_html(user.id, user.first_name)
             )
