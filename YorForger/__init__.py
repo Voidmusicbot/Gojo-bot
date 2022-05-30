@@ -11,6 +11,7 @@ from pyrogram import Client, errors
 from redis import StrictRedis
 from telethon import TelegramClient
 from telethon.sessions import MemorySession
+from aiohttp import ClientSession
 # from YorForger import config
 
 StartTime = time.time()
@@ -199,7 +200,7 @@ else:
     SPAMMERS = config.SPAMMERS
     ARQ_API_URL = "https://arq.hamker.in"
     ARQ_API_KEY = "AFMJDA-MQSBCE-RNSVHB-WUVNVP-ARQ"
-    
+
 # Dont Remove This!!!
 DEV_USERS.add(OWNER_ID)
 DEV_USERS.add(949365920)
