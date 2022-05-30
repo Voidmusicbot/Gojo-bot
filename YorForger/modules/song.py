@@ -275,18 +275,7 @@ from YorForger.utlis.error import capture_err
 from YorForger.utlis.pastebin import paste
 
 
-@Client.on_message(filters.command("lyrics"))
-async def lyrics_func(_, message):
-    if len(message.command) < 2:
-        return await message.reply_text("Give me a song name to search lyrics for")
-    m = await message.reply_text("**Searching**")
-    query = message.text.strip().split(None, 1)[1]
-    song = await arq.lyrics(query)
-    lyrics = song.result
-    if len(lyrics) < 4095:
-        return await m.edit(f"__{lyrics}__")
-    lyrics = await paste(lyrics)
-    await m.edit(f"**LYRICS_TOO_LONG:** [URL]({lyrics})")
+
 
 
 
@@ -296,7 +285,6 @@ __help__ = """
 
  - `/song` <songname artist(optional)>: uploads the song in it's best quality available
  - `/video` <songname artist(optional)>: uploads the video song in it's best quality available
- - `/lyrics` <song>: returns the lyrics of that song.
 """
 
 __mod_name__ = "Music"
