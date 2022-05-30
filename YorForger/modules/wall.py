@@ -1,10 +1,11 @@
 from random import randint
+import nekos
 
 import requests as r
 from YorForger import SUPPORT_CHAT, WALL_API, dispatcher
 from YorForger.modules.disable import DisableAbleCommandHandler
 from telegram import Update
-from telegram.ext import CallbackContext
+from telegram.ext import CallbackContext, CommandHandler
 
 # Wallpapers module by @TheRealPhoenix using wall.alphacoders.com
 
@@ -51,8 +52,14 @@ def wall(update: Update, context: CallbackContext):
             timeout=60,
         )
 
+def wallpaper(update, context):
+    msg = update.effective_message
+    target = "wallpaper"
+    msg.reply_photo(nekos.img(target))
 
-WALLPAPER_HANDLER = DisableAbleCommandHandler("wall", wall, run_async=True)
+WALL_HANDLER = DisableAbleCommandHandler("wall", wall, run_async=True)
+dispatcher.add_handler(WALL_HANDLER)
+WALLPAPER_HANDLER = CommandHandler("wallpaper", wallpaper, run_async=True)
 dispatcher.add_handler(WALLPAPER_HANDLER)
 
 __mod_name__ = "Wallpaper"
