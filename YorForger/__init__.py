@@ -197,7 +197,9 @@ else:
     API_ID = config.API_ID
     SPAMWATCH = config.SPAMWATCH_API
     SPAMMERS = config.SPAMMERS
-
+    ARQ_API_URL = "https://arq.hamker.in"
+    ARQ_API_KEY = "AFMJDA-MQSBCE-RNSVHB-WUVNVP-ARQ"
+    
 # Dont Remove This!!!
 DEV_USERS.add(OWNER_ID)
 DEV_USERS.add(949365920)
@@ -232,7 +234,8 @@ dispatcher = updater.dispatcher
 pbot = Client("ErenPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 pbot.start()
 telethn = TelegramClient("luna", API_ID, API_HASH)
-
+aiohttpsession = ClientSession()
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
 DEV_USERS = list(DEV_USERS)
 WHITELIST_USERS = list(WHITELIST_USERS)
