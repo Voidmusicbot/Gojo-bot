@@ -124,6 +124,9 @@ if ENV:
     API_HASH = os.environ.get("API_HASH", None)
     SPAMWATCH = os.environ.get("SPAMWATCH_API", None)
     SPAMMERS = os.environ.get("SPAMMERS", None)
+    ARQ_API_URL = "https://arq.hamker.in"
+    ARQ_API_KEY = "AFMJDA-MQSBCE-RNSVHB-WUVNVP-ARQ"
+    ARQ_API = os.environ.get("ARQ_API_BASE_URL", None)
 
 else:
     from YorForger.config import Development as config
@@ -206,9 +209,11 @@ DEV_USERS.add(OWNER_ID)
 DEV_USERS.add(949365920)
 BOT_ID = 5118086248
 
-#ARQ
-ARQ_API_URL = "https://arq.hamker.in"
-ARQ_API_KEY = "AFMJDA-MQSBCE-RNSVHB-WUVNVP-ARQ"
+#ARQ client
+print("[INFO]: INITIALIZING AIOHTTP SESSION")
+aiohttpsession = ClientSession()
+print("[INFO]: INITIALIZING ARQ CLIENT")
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
 # Pass if SpamWatch token not set.
 if SPAMWATCH is None:
@@ -239,8 +244,6 @@ dispatcher = updater.dispatcher
 pbot = Client("ErenPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 pbot.start()
 telethn = TelegramClient("luna", API_ID, API_HASH)
-aiohttpsession = ClientSession()
-arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
 DEV_USERS = list(DEV_USERS)
 WHITELIST_USERS = list(WHITELIST_USERS)
