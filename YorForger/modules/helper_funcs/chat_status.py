@@ -12,6 +12,7 @@ from YorForger import (
     DEV_USERS,
     SUPPORT_USERS,
     DEMONS, 
+    OWNER_ID,
     WHITELIST_USERS,
     dispatcher,
 )
