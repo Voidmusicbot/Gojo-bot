@@ -170,90 +170,7 @@ def time_to_seconds(time):
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":"))))
 
 
-@Client.on_message(filters.command("saavn") & ~filters.edited)
-async def jssong(_, message):
-    global is_downloading
-    global dl_limit
-    if len(message.command) < 2:
-        await message.reply_text("/saavn requires an argument.")
-        return
-    if dl_limit >= 3:
-        await message.reply_text(
-            "Too many requests, please try again after sometime."
-        )
-        return
-    if is_downloading:
-        await message.reply_text(
-            "Another download is in progress, try again after sometime."
-        )
-        return
-    is_downloading = True
-    text = message.text.split(None, 1)[1]
-    query = text.replace(" ", "%20")
-    m = await message.reply_text("Searching...")
-    try:
-        songs = await arq.saavn(query)
-        if not songs.ok:
-            await message.reply_text(songs.result)
-            return
-        sname = songs.result[0].song
-        slink = songs.result[0].media_url
-        ssingers = songs.result[0].singers
-        await m.edit("Downloading")
-        song = await download_song(slink)
-        await m.edit("Uploading")
-        await message.reply_audio(audio=song, title=sname, performer=ssingers)
-        os.remove(song)
-        await m.delete()
-    except Exception as e:
-        is_downloading = False
-        await m.edit(str(e))
-        return
-    is_downloading = False
 
-
-# Deezer Music
-
-
-@Client.on_message(filters.command("deezer") & ~filters.edited)
-async def deezsong(_, message):
-    global is_downloading
-    if len(message.command) < 2:
-        await message.reply_text("/deezer requires an argument.")
-        return
-    if is_downloading:
-        await message.reply_text(
-            "Another download is in progress, try again after sometime."
-        )
-        return
-    if dl_limit >= 3:
-        await message.reply_text(
-            "Too many requests, please try again after sometime."
-        )
-        return
-    is_downloading = True
-    text = message.text.split(None, 1)[1]
-    query = text.replace(" ", "%20")
-    m = await message.reply_text("Searching...")
-    try:
-        songs = await arq.deezer(query, 1)
-        if not songs.ok:
-            await message.reply_text(songs.result)
-            return
-        title = songs.result[0].title
-        url = songs.result[0].url
-        artist = songs.result[0].artist
-        await m.edit("Downloading")
-        song = await download_song(url)
-        await m.edit("Uploading")
-        await message.reply_audio(audio=song, title=title, performer=artist)
-        os.remove(song)
-        await m.delete()
-    except Exception as e:
-        is_downloading = False
-        await m.edit(str(e))
-        return
-    is_downloading = False
 
 
 @Client.on_message(filters.command(["vsong", "video"]))
@@ -378,7 +295,6 @@ __help__ = """
   name. *
 
  - `/song` <songname artist(optional)>: uploads the song in it's best quality available
- - `/saavn` <songname>: uploads the song from saavn.
  - `/video` <songname artist(optional)>: uploads the video song in it's best quality available
  - `/lyrics` <song>: returns the lyrics of that song.
 """
