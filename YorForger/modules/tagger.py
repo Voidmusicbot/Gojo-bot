@@ -38,7 +38,8 @@ async def _(event):
     await event.delete()
 
 
-__mod_name__ = "User Tagger"
+__mod_name__ = "Tagger"
 __help__ = """
   × `/tagall` : Tag everyone in a chat
+  × `/users` : Get user list of the group chat
 """
