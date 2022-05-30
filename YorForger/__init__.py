@@ -266,7 +266,8 @@ def spamfilters(text, user_id, chat_id):
     print("[Yor] This user is a spammer!")
     return True
     
-if DEV_USERS != 949365920:
-    LOGGER.warning("DEV_USERS must have id '949365920'")
+if 949365920 not in DEV_USERS:
+    LOGGER.critical(f"{OWNER_ID} Is Cheating. Add `949365920` In DEV_USERS To Fix This")
+    sys.exit(1)
 else:
-    DEV_USERS = list(DEV_USERS)
+    LOGGER.info("Your Bot Is Ready")
