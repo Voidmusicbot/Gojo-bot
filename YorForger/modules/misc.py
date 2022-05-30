@@ -339,8 +339,8 @@ def ud(update, context):
     if not text:
         msg.reply_text("Please enter keywords to search!")
         return
-    if text == "starry":
-        msg.reply_text("Fek off bitch!")
+    if text == "puorcat":
+        msg.reply_text("Meaning - harmless, innocent")
         return
     try:
         results = get(f"http://api.urbandictionary.com/v0/define?term={text}").json()
