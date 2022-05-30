@@ -271,8 +271,8 @@ async def ytmusic(client, message: Message):
 
 
 from YorForger import aiohttpsession as session
-from YorForger.utils.errors import capture_err
-from YorForger.utils.pastebin import paste
+from YorForger.utlis.error import capture_err
+from YorForger.utlis.pastebin import paste
 
 
 @Client.on_message(filters.command("lyrics"))
