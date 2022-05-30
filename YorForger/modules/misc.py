@@ -339,13 +339,13 @@ def ud(update, context):
     if not text:
         msg.reply_text("Please enter keywords to search!")
         return
-    if text == "puorcat":
-        msg.reply_text("Meaning - harmless, innocent")
-        return
     try:
-        results = get(f"http://api.urbandictionary.com/v0/define?term={text}").json()
-        reply_text = f'Word: {text}\nDefinition: {results["list"][0]["definition"]}'
-        reply_text += f'\n\nExample: {results["list"][0]["example"]}'
+        if text == "puorcat":
+            reply_text = ("Meaning - harmless, innocent")
+        else:
+            results = get(f"http://api.urbandictionary.com/v0/define?term={text}").json()
+            reply_text = f'Word: {text}\nDefinition: {results["list"][0]["definition"]}'
+            reply_text += f'\n\nExample: {results["list"][0]["example"]}'
     except IndexError:
         reply_text = (
             f"Word: {text}\nResults: Sorry could not find any matching results!"
