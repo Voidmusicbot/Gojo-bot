@@ -338,7 +338,6 @@ def error_callback(update, context):
         pass
         # handle all other telegram related errors
 
-
 def help_button(update, context):
     query = update.callback_query
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
@@ -362,7 +361,7 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="[ Back ]", callback_data="help_back")]]
+                    [[InlineKeyboardButton(text="Back ", callback_data="help_back")]]
                 ),
             )
 

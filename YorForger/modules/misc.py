@@ -23,7 +23,7 @@ from telegram import (
     Update,
 )
 from telegram.error import BadRequest
-from telegram.ext import CommandHandler, Filters, CallbackContext
+from telegram.ext import CommandHandler, Filters, CallbackContext, CallbackQueryHandler
 from telegram.utils.helpers import escape_markdown, mention_html
 
 from YorForger import (
