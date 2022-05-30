@@ -90,7 +90,9 @@ class Config(object):
     CUSTOM_CMD = (
         "awoo" # Icurrently don't know about this.
     )
-
+    ARQ_API = (
+      00
+    )
 
 class Production(Config):
     LOGGER = True

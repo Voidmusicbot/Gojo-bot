@@ -125,8 +125,7 @@ if ENV:
     SPAMWATCH = os.environ.get("SPAMWATCH_API", None)
     SPAMMERS = os.environ.get("SPAMMERS", None)
     ARQ_API_URL = "https://arq.hamker.in"
-    ARQ_API_KEY = "AFMJDA-MQSBCE-RNSVHB-WUVNVP-ARQ"
-    ARQ_API = os.environ.get("ARQ_API_BASE_URL", None)
+    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", None)
 
 else:
     from YorForger.config import Development as config
@@ -202,6 +201,7 @@ else:
     API_ID = config.API_ID
     SPAMWATCH = config.SPAMWATCH_API
     SPAMMERS = config.SPAMMERS
+    ARQ_API_KEY = config.ARQ_API
     
 
 # Dont Remove This!!!

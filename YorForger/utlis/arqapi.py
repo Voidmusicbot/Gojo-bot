@@ -12,8 +12,6 @@ from Python_ARQ import ARQ
 from YorForger import BOT_ID, OWNER_ID, ARQ_API_URL, ARQ_API_KEY
 from YorForger import pbot
 
-ARQ_API = "WPLYQX-KLEHQY-AXINRQ-WNIPGO-ARQ"
-ARQ_API_KEY = "WPLYQX-KLEHQY-AXINRQ-WNIPGO-ARQ"
 SUDOERS = OWNER_ID
 ARQ_API_URL = "https://arq.hamker.in"
 
