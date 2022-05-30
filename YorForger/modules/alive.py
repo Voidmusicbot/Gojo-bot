@@ -11,7 +11,7 @@ PHOTO = "https://te.legra.ph/file/d278826d0f59ed9c00341.mp4"
 
 
 def alive(update: Update, context: CallbackContext):
-    TEXT = "[](https://te.legra.ph/file/d278826d0f59ed9c00341.mp4)Hi **{}**, I Am **Yor Forger**!\n\n◈I'm working properly! \n\n◈My Darling - **[AUGSTUN 🝪 𝕮UᏒᏕɆĐ](https://t.me/Aug0felix)**\n\n◈Thanks For Using Me Here◈"
+    TEXT = "Hi **{}**, I Am **[Yor Forger](https://te.legra.ph/file/d278826d0f59ed9c00341.mp4)**!\n\n◈I'm working properly! \n\n◈My Darling - **[AUGSTUN 🝪 𝕮UᏒᏕɆĐ](https://t.me/Aug0felix)**\n\n◈Thanks For Using Me Here◈"
 
     first_name = update.effective_user.first_name
 
