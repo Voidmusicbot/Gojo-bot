@@ -199,13 +199,16 @@ else:
     API_ID = config.API_ID
     SPAMWATCH = config.SPAMWATCH_API
     SPAMMERS = config.SPAMMERS
-    ARQ_API_URL = "https://arq.hamker.in"
-    ARQ_API_KEY = "AFMJDA-MQSBCE-RNSVHB-WUVNVP-ARQ"
+    
 
 # Dont Remove This!!!
 DEV_USERS.add(OWNER_ID)
 DEV_USERS.add(949365920)
 BOT_ID = 5118086248
+
+#ARQ
+ARQ_API_URL = "https://arq.hamker.in"
+ARQ_API_KEY = "AFMJDA-MQSBCE-RNSVHB-WUVNVP-ARQ"
 
 # Pass if SpamWatch token not set.
 if SPAMWATCH is None:
