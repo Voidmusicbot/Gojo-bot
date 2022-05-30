@@ -11,7 +11,7 @@ from pyrogram import Client, errors
 from redis import StrictRedis
 from telethon import TelegramClient
 from telethon.sessions import MemorySession
-from YorForger import config
+# from YorForger import config
 
 StartTime = time.time()
 
