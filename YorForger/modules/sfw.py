@@ -1,5 +1,5 @@
 import nekos
-from Shikimori import dispatcher
+from YorForger import dispatcher
 from telegram.ext import CommandHandler
 
 
