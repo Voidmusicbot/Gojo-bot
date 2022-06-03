@@ -668,7 +668,7 @@ def main():
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.send_photo(
-                "https://t.me/Komisansupport",
+                "@Komisansupport",
                 "https://telegra.ph/file/48a7b1f82d491d38b3ca9.jpg",
                 "I Am Up And Ready!",
                 parse_mode=ParseMode.MARKDOWN,
@@ -677,7 +677,7 @@ def main():
                   [                  
                        InlineKeyboardButton(
                              text="[Start Me]",
-                             url="https://t.me/kitaxrobot?start=")
+                             url="https://t.me/yor_forger_spyxfamily_bot?start=")
                      ] 
                 ]
             ),  
