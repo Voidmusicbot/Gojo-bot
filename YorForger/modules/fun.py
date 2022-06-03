@@ -741,7 +741,7 @@ FSQUARIFY_HANDLER = DisableAbleCommandHandler("fsquare", fsquarify, run_async=Tr
 BUBBIFY_HANDLER = DisableAbleCommandHandler("bubble", bubbify, run_async=True)
 FBUBBIFY_HANDLER = DisableAbleCommandHandler("fbubble", fbubbify, run_async=True)
 BLUIFY_HANDLER = DisableAbleCommandHandler("blue", bluify, run_async=True)
-RYUMEME_HANDLER = DisableAbleCommandHandler(["meme", "memes"], meme run_async=True)#deployyy
+RYUMEME_HANDLER = DisableAbleCommandHandler(["meme", "memes"], meme)
 
 dispatcher.add_handler(WEEBIFY_HANDLER)
 dispatcher.add_handler(SHOUT_HANDLER)
