@@ -668,10 +668,20 @@ def main():
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.send_photo(
-                "@https://t.me/Komisansupport",
+                "https://t.me/Komisansupport",
                 "https://telegra.ph/file/48a7b1f82d491d38b3ca9.jpg",
                 "I Am Up And Ready!",
                 parse_mode=ParseMode.MARKDOWN,
+           reply_markup=InlineKeyboardMarkup(
+                [
+                  [                  
+                       InlineKeyboardButton(
+                             text="[Start Me]",
+                             url="https://t.me/kitaxrobot?start=")
+                     ] 
+                ]
+            ),  
+        )
             )
         except Unauthorized:
             LOGGER.warning(
