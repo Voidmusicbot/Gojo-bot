@@ -716,7 +716,7 @@ __help__ = """
 ❂ /sanitize*:* always use this before /pat or any contact
 ❂ /pat*:* pats a user, or get patted
 ❂ /8ball*:* predicts using 8ball method
-
+❂ /meme : for some random anime memes     #@RyuSenpai heyyy i am intrested in working as dev in projects
 
 """
 
@@ -741,6 +741,7 @@ FSQUARIFY_HANDLER = DisableAbleCommandHandler("fsquare", fsquarify, run_async=Tr
 BUBBIFY_HANDLER = DisableAbleCommandHandler("bubble", bubbify, run_async=True)
 FBUBBIFY_HANDLER = DisableAbleCommandHandler("fbubble", fbubbify, run_async=True)
 BLUIFY_HANDLER = DisableAbleCommandHandler("blue", bluify, run_async=True)
+RYUMEME_HANDLER = DisableAbleCommandHandler(["meme", "memes"], meme)
 
 dispatcher.add_handler(WEEBIFY_HANDLER)
 dispatcher.add_handler(SHOUT_HANDLER)
@@ -763,6 +764,7 @@ dispatcher.add_handler(BUBBIFY_HANDLER)
 dispatcher.add_handler(FBUBBIFY_HANDLER)
 dispatcher.add_handler(SQUARIFY_HANDLER)
 dispatcher.add_handler(FSQUARIFY_HANDLER)
+dispatcher.add_handler(RYUMEME_HANDLER)
 
 __mod_name__ = "Fun"
 __command_list__ = [
