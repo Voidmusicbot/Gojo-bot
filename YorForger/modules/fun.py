@@ -9,7 +9,7 @@ from YorForger.modules.helper_funcs.chat_status import is_user_admin
 from YorForger.modules.helper_funcs.extraction import extract_user
 from telegram import ChatPermissions, ParseMode, Update
 from telegram.error import BadRequest
-from telegram.ext import CallbackContext
+from telegram.ext import CallbackContext, run_async
 
 GIF_ID = "CgACAgQAAx0CSVUvGgAC7KpfWxMrgGyQs-GUUJgt-TSO8cOIDgACaAgAAlZD0VHT3Zynpr5nGxsE"
 
@@ -690,7 +690,18 @@ def bluify(update: Update, context: CallbackContext):
         message.reply_text(string)
 
 
-
+@run_async
+def meme(update: Update, context: CallbackContext):
+    msg = update.effective_message
+    meme = r.get("https://meme-api.herokuapp.com/gimme/Animemes/").json()   #@RyuSenpai telegram user
+    image = meme.get("url")
+    caption = meme.get("title")
+    if not image:
+        msg.reply_text("No URL was received from the API!")
+        return
+    msg.reply_photo(
+                photo=image, caption=caption)
+        
 __help__ = """
 ❂ /runs*:* reply a random string from an array of replies
 ❂ /slap*:* slap a user, or get slapped if not a reply
