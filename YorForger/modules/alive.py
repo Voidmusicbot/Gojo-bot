@@ -7,7 +7,7 @@ from telegram.ext import (
     CommandHandler,
 )
 
-PHOTO = "https://telegra.ph/file/8decaca665e30b44fc877.mp4"
+PHOTO = "https://telegra.ph/file/1f5aa2587aace405edca8.jpg"
 
 
 def alive(update: Update, context: CallbackContext):
