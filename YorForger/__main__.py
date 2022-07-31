@@ -90,8 +90,8 @@ START_MSG = "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>"
 START_IMG = "https://telegra.ph/file/5ed8d6ab91ea9b9eaaad0.jpg"
     
 PM_START_TEXT = """
-────「 [{}](https://telegra.ph/file/a15eb346fec9a0b1b2696.mp4) 」────
-Heyyo `{}`,  here to help,
+────「 [{}](https://telegra.ph/file/e48cf4bc841f6f07274ce.mp4) 」────
+Hey `{}`,  here to help,
 *I am an Anime themed advance group management bot with a lot of awesome Features*
 ┏━━━━━━━━━━━━━━━━━━━━
 ┣♡ *Uptime:* `{}`
@@ -109,13 +109,13 @@ Haven't slept since: {}
 buttons = [
     [
         InlineKeyboardButton(
-            text="💖 ADD ME IN YOUR GROUP",url="http://t.me/Yor_forger_spyxfamily_bot?startgroup=true"),
+            text=" ADD ME IN YOUR GROUP",url="http://t.me/satoru_gojo_abot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(
-            text="⚙️ Support", url=f"https://t.me/Komisansupport"),                    
+            text="Gʀᴏᴜᴘ", url=f"https://t.me/ethio_anime_editors"),                    
         InlineKeyboardButton(
-            text="Updates",  url=f"https://t.me/yorforgerbotupdates"
+            text="Updates",  url=f"https://t.me/gojosbotupdates"
         ),
     ],
     [
@@ -125,7 +125,7 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
-            text="Wallpaper Channel", url=f"https://t.me/animengameswall"),                    
+            text="AMV Channel", url=f"https://t.me/Ethio_amv_editors"),                    
     ],
     
 ]
@@ -260,7 +260,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
                 update.effective_message.reply_photo(
-            START_IMG, caption="<b>Hello, I'm Yor Forger!\nI'm Working Properly.</b>\nI am alive since: <code>{}</code>".format(
+            START_IMG, caption="<b>Hello, I'm GOJO神!\nI'm Working Properly.</b>\nI am alive since: <code>{}</code>".format(
                 uptime,
             ),
             parse_mode=ParseMode.HTML,
@@ -268,16 +268,16 @@ def start(update: Update, context: CallbackContext):
              reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text="Owner", url="https://t.me/Aug0felix")
+                  InlineKeyboardButton(text="Owner", url="https://t.me/mr_nack_nack")
                   ],
                   [
-                  InlineKeyboardButton(text="Manager", url="https://t.me/Sneha_UwU_OwO")
+                  InlineKeyboardButton(text="Manager", url="https://t.me/hori_san_x")
                   ],
                   [
-                  InlineKeyboardButton(text="❤Sᴜᴘᴘᴏʀᴛ❤", url="https://t.me/Komisansupport")
+                  InlineKeyboardButton(text="Network", url="https://t.me/Void_HeadQuarters")
                   ],
                   [
-                  InlineKeyboardButton(text="🔰Uᴘᴅᴀᴛᴇs🔰", url="https://t.me/yorforgerbotupdates")
+                  InlineKeyboardButton(text="🔰Uᴘᴅᴀᴛᴇs🔰", url="https://t.me/gojosbotupdates")
                   ]
                 ]
             ),
@@ -669,7 +669,7 @@ def main():
         try:
             dispatcher.bot.send_photo(
                 "@Komisansupport",
-                "https://telegra.ph/file/48a7b1f82d491d38b3ca9.jpg",
+                "https://telegra.ph/file/1ccde093af9b6bf288810.jpg",
                 "I Am Up And Ready!",
                 parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
@@ -677,7 +677,7 @@ def main():
                   [                  
                        InlineKeyboardButton(
                              text="[Start Me]",
-                             url="https://t.me/yor_forger_spyxfamily_bot?start=")
+                             url="https://t.me/satoru_gojo_abot?start=")
                      ] 
                 ]
             ),  
