@@ -1,13 +1,13 @@
 <h2 align="center">
-    ──「 YOR FORGER IS A MODULAR BOT WITH ANIME THEME 」──
+    ──「 GOJO神 」──
 </h2>
 
 <p align="center">
-  <img src="https://te.legra.ph/file/c33fa0a4ee5c48361b23e.jpg">
+  <img src="https://telegra.ph/file/6a79f37b4cdc0ca0c9a43.jpg">
 </p>
 
 <p align="center">
-  <a href="http://t.me/Yor_forger_spyxfamily_bot"> <img src="https://te.legra.ph/file/bd19fc0087a6bf82efb15.jpg" alt="Yor Forger on Telegram" /> </a></br>
+  <a href="http://t.me/satoru_gojo_abot"> <img src="https://telegra.ph/file/1f5aa2587aace405edca8.jpg" alt="Yor Forger on Telegram" /> </a></br>
   <a href="https://github.com/SOME-1HING/yor-froger-bot/blob/main/LICENSE"> <img src="https://img.shields.io/badge/License-GPLv3-blueviolet?style=for-the-badge" alt="License" /> </a>
   <a href="https://makeapullrequest.com"> <img src="https://img.shields.io/badge/PRs-Welcome-yellow?style=for-the-badge" alt="PRs" /></a></br>
   <a href="https://www.python.org/"> <img src="https://img.shields.io/badge/Made%20With-Python-orange?style=for-the-badge&logo=python" alt="Python" /> </a>
@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <img src="https://te.legra.ph/file/c1e927bcf821cf2d275db.jpg">
+  <img src="https://telegra.ph/file/67697bc68ed5a00a2c0b1.jpg">
 </p>
 
 <h2 align="center">
