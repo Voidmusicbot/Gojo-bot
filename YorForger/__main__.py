@@ -87,7 +87,7 @@ def get_readable_time(seconds: int) -> str:
 HELP_IMG = "https://telegra.ph//file/b3aedf8d65276f8241556.jpg"
 HELP_MSG = "Click the button below to get help menu in your pm."
 START_MSG = "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>"
-START_IMG = "https://telegra.ph/file/5ed8d6ab91ea9b9eaaad0.jpg"
+START_IMG = "https://telegra.ph/file/6a79f37b4cdc0ca0c9a43.jpg"
     
 PM_START_TEXT = """
 ────「 [{}](https://telegra.ph/file/e48cf4bc841f6f07274ce.mp4) 」────
